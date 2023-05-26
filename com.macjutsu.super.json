@@ -1,0 +1,556 @@
+{
+	"title": "Super (com.macjutsu.super)",
+	"description": "Super settings",
+	"properties": {
+		"JamfProID": {
+			"type": "string",
+			"title": "JamfProID",
+			"default": "$JSSID",
+			"description": "JamfProID.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Jamf-Pro-API-Credentials#jamf-pro-api-account-privileges"
+			}],
+			"property_order": 5
+		},
+		"DefaultDefer": {
+			"type": "string",
+			"title": "Default Defer",
+			"default": 120,
+			"description": "The number of seconds to defer until the next update workflow attempt if a user choses not to update restart.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Deferment-Options#default-deferment-timer"
+			}],
+			"property_order": 10
+		},
+		"FocusDefer": {
+			"type": "string",
+			"title": "Focus Defer",
+			"default": 120,
+			"description": "The number of seconds to defer automatically if the system is in user-enabled Focus/Do Not Disturb or when a process has requested that the display not go to sleep (for example, during an active meeting).",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Deferment-Options#focus-deferment-timer"
+			}],
+			"property_order": 15
+		},
+		"MenuDefer": {
+			"type": "string",
+			"title": "Menu Defer",
+			"default": "120,200,300 ",
+			"description": "Display a deferral time pop-up menu in the non-deadline update restart dialog that allows the user to override the default-defer time.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Deferment-Options#menu-deferment-timer"
+			}],
+			"property_order": 20
+		},
+		"RecheckDefer": {
+			"type": "string",
+			"title": "Recheck Defer",
+			"default": 120,
+			"description": "The number of seconds to defer if no software updates are found. Enabling this option results in super acting as a permanent agent that checks for software updates on a regular basis.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Deferment-Options#recheck-deferment-timer"
+			}],
+			"property_order": 25
+		},
+		"ErrorDefer": {
+			"type": "string",
+			"title": "Error Defer",
+			"default": 120,
+			"description": "Update this one",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/"
+			}],
+			"property_order": 30
+		},
+		"FocusCount": {
+			"type": "string",
+			"title": "Focus Count",
+			"default": 5,
+			"description": "The maximum number of automatic deferrals allowed if the system is in user-enabled Focus/Do Not Disturb or when a process has requested that the display not go to sleep (for example, during an active meeting). Once the focus count deadline has been met, the update restart dialogs always appear even if the user is in Focus/Do Not Disturb.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Deferment-Count-Deadlines#focus-count-deadline"
+			}],
+			"property_order": 35
+		},
+		"SoftCount": {
+			"type": "string",
+			"title": "Soft Count",
+			"default": 5,
+			"description": "The maximum number of user selected deferrals allowed before showing the soft deadline dialog. The soft deadline is an interactive update restart dialog indicating that no more deferrals are allowed.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Deferment-Count-Deadlines#soft-count-deadline"
+			}],
+			"property_order": 40
+		},
+		"HardCount": {
+			"type": "string",
+			"title": "Hard Count",
+			"default": 5,
+			"description": "The maximum number of user selected deferrals allowed before the computer automatically restarts for updates without asking the user for approval. However, the user is notified that a restart is pending.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Deferment-Count-Deadlines#hard-count-deadline"
+			}],
+			"property_order": 45
+		},
+		"FocusDays": {
+			"type": "string",
+			"title": "Focus Days",
+			"default": 2,
+			"description": "The maximum number of days that automatic deferrals are allowed if the system is in user-enabled Focus/Do Not Disturb or when a process has requested that the display not go to sleep (for example, during an active meeting). After the focus days deadline has passed, the update restart dialogs always appear even if the user is in Focus/Do Not Disturb.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Deferment-Days-Deadlines#focus-days-deadline"
+			}],
+			"property_order": 50
+		},
+		"SoftDays": {
+			"type": "string",
+			"title": "Soft Days",
+			"default": 4,
+			"description": "The maximum number of deferral days allowed before showing the soft deadline dialog. The soft deadline is an interactive update restart dialog indicating that no more deferrals are allowed.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Deferment-Days-Deadlines#soft-days-deadline"
+			}],
+			"property_order": 55
+		},
+		"HardDays": {
+			"type": "string",
+			"title": "Hard Days",
+			"default": 6,
+			"description": "The maximum number of days allowed before before the computer automatically restarts for updates without asking the user for approval. However, the user is notified that a restart is pending.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Deferment-Days-Deadlines#hard-days-deadline"
+			}],
+			"property_order": 60
+		},
+		"ZeroDay": {
+			"type": "string",
+			"title": "Hard Days",
+			"default": "2022 - 07 - 01",
+			"description": "Instead of having the days deadline counter automatically select the day zero date, this option sets a specific date and time as day zero. Note that you need to manually update this value every time you want to set a new day zero.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Deferment-Days-Deadlines#manual-zero-day-override"
+			}],
+			"property_order": 65
+		},
+		"FocusDate": {
+			"type": "string",
+			"title": "Focus Date",
+			"default": "2022 - 09 - 03: 12: 00",
+			"description": "The last date and time when automatic deferrals are allowed if the system is in user-enabled Focus/Do Not Disturb or when a process has requested that the display not go to sleep (for example, during an active meeting). After the focus date deadline has passed, the update restart dialogs always appear even if the user is in Focus/Do Not Disturb.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Deferment-Date-Deadlines#focus-date-deadline"
+			}],
+			"property_order": 70
+		},
+		"SoftDate": {
+			"type": "string",
+			"title": "Soft Date",
+			"default": "2022 - 09 - 05: 12: 00",
+			"description": "The last date and time before showing the soft deadline dialog. The soft deadline is an interactive update restart dialog indicating that no more deferrals are allowed.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Deferment-Date-Deadlines#soft-date-deadline"
+			}],
+			"property_order": 75
+		},
+		"HardDate": {
+			"type": "string",
+			"title": "Hard Date",
+			"default": "2022 - 09 - 07: 12: 00",
+			"description": "If this date and time have passed the computer automatically restarts for updates without asking the user for approval. However, the user is notified that a restart is pending.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Deferment-Date-Deadlines#hard-date-deadline"
+			}],
+			"property_order": 80
+		},
+		"DeferDialogTimeout": {
+			"type": "string",
+			"title": "Defer Dialog Timeout",
+			"default": 60,
+			"description": "Update",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/"
+			}],
+			"property_order": 85
+		},
+		"SoftDialogTimeout": {
+			"type": "string",
+			"title": "Soft Dialog Timeout",
+			"default": 60,
+			"description": "Update",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/"
+			}],
+			"property_order": 90
+		},
+		"DisplayRedraw": {
+			"type": "string",
+			"title": "Display Redraw",
+			"default": 20,
+			"description": "If a user choses to ignore an interactive update restart dialog (for example, they moved it offscreen) this specifies the number of seconds to wait before closing and then reopening the dialog, thus redrawing it back to it's original open position.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Display-Options#display-dialog-redraw"
+			}],
+			"property_order": 95
+		},
+		"DisplayIcon": {
+			"type": "string",
+			"title": "Display Icon",
+			"default": "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/BurningIcon.icns",
+			"description": "Local path or http(s) URL to an image file that will replace the default System Settings (or System Preferences) icon in super dialogs and notifications.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Display-Icon#custom-display-icon"
+			}],
+			"property_order": 100
+		},
+		"IconSizeIbm": {
+			"type": "string",
+			"title": "Icon Size for IBM Notifier",
+			"default": 128,
+			"description": "Size in number of pixels for the alert icon in IBM Notifier generated dialogs and notifications.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Display-Icon#custom-display-icon-size-for-ibm-notifier"
+			}],
+			"property_order": 105
+		},
+		"IconSizeJamf": {
+			"type": "string",
+			"title": "Icon Size for JamfHelper",
+			"default": 128,
+			"description": "Size in number of pixels for the alert icon in jamfHelper generated dialogs and notifications.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Display-Icon#custom-display-icon-size-for-jamfhelper"
+			}],
+			"property_order": 110
+		},
+		"DisplayAccessoryType": {
+			"type": "string",
+			"title": "Display Accessory Type",
+			"default": "HTML",
+			"description": "options allow you to specify a custom display accessory view for IBM Notifier interactive dialogs",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 115
+		},
+		"DisplayAccessoryDefault": {
+			"type": "string",
+			"title": "Display Accessory Default",
+			"default": "https://raw.githubusercontent.com/Macjutsu/super/main/Super-Friends/Display-Accessory-Example.html",
+			"description": "This shows the display accessory content for all macOS updates and upgrades.",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 120
+		},
+		"DisplayAccessoryUpdate": {
+			"type": "string",
+			"title": "Display Accessory Update",
+			"default": "https://raw.githubusercontent.com/Macjutsu/super/main/Super-Friends/Display-Accessory-Example.html",
+			"description": "This shows the display accessory content for only macOS updates.",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 125
+		},
+		"DisplayAccessoryUpgrade": {
+			"type": "string",
+			"title": "Display Accessory Upgrade",
+			"default": "https://raw.githubusercontent.com/Macjutsu/super/main/Super-Friends/Display-Accessory-Example.html",
+			"description": "Update",
+			"links": [{
+				"rel": "More information",
+				"href": "This shows the display accessory content for only macOS upgrades."
+			}],
+			"property_order": 130
+		},
+		"DisplayAccessoryUserAuth": {
+			"type": "string",
+			"title": "Display Accessory User Auth",
+			"default": "https://raw.githubusercontent.com/Macjutsu/super/main/Super-Friends/Display-Accessory-Example.html",
+			"description": "option can accept a local path or a web URL (this option also requires setting the --display-accessory-type=TYPE option).",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 135
+		},
+		"HelpButton": {
+			"type": "string",
+			"title": "Help Button",
+			"default": "https://support.apple.com/en-us/HT201541",
+			"description": "allows you to specify a help button for IBM Notifier interactive dialogs",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 140
+		},
+		"WarningButton": {
+			"type": "string",
+			"title": "Warning Button",
+			"default": "https://support.apple.com/en-us/HT201222",
+			"description": "allows you to specify a warning button for IBM Notifier interactive dialogs ",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 145
+		},
+		"DisplaySilently": {
+			"type": "boolean",
+			"title": "Display Silently",
+			"default": false,
+			"description": "option will open all IBM Notifier dialogs and notifications without playing the system warning sound ",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 150
+		},
+		"PreferJamfHelper": {
+			"type": "boolean",
+			"title": "Prefer Jamf Helper",
+			"default": false,
+			"description": "For computers managed by Jamf Pro, prefer using jamfHelper over IBM Notifier for update dialogs and notifications.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Display-Options#prefer-jamfhelper-dialogs-and-notifications"
+			}],
+			"property_order": 155
+		},
+		"UserAuthTimeout": {
+			"type": "string",
+			"title": "User Auth Timeout",
+			"default": 600,
+			"description": "allows you to set a timeout for the macOS update/upgrade via user authentication dialog ",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 160
+		},
+		"UserAuthMDMFailover": {
+			"type": "string",
+			"title": "User Auth MDM Failover",
+			"default": "HARD,INSTALLNOW,BOOTSTRAP",
+			"description": "fails over to the user authentication workflow any time the MDM service is unavailable or the API account fails to authenticate",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 165
+		},
+		"AllowUpgrade": {
+			"type": "boolean",
+			"title": "Allow Upgrade",
+			"default": true,
+			"description": "automatically enforce all contemporary macOS upgrade workflows from macOS 10.14 (older macOS versions may work but are not tested) to macOS 13.x",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 170
+		},
+		"TargetUpgrade": {
+			"type": "string",
+			"title": "Target Upgrade",
+			"default": 12,
+			"description": "allows you to specify a major macOS version (11, 12, or 13) as the maximum allowed macOS upgrade.",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 175
+		},
+		"AllowRSRUpdates": {
+			"type": "boolean",
+			"title": "Allow RSR Updates",
+			"default": true,
+			"description": "option must be specified to install RSR updates, otherwise the default super behavior is to not install RSR updates.",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 180
+		},
+		"EnforceNonSystemUpdates": {
+			"type": "boolean",
+			"title": "Enforce Non System Updates",
+			"default": true,
+			"description": "replaces the --enforce-all-updates option. ",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 185
+		},
+		"OnlyDownload": {
+			"type": "boolean",
+			"title": "Only Download",
+			"default": true,
+			"description": "workflow option allows you to pre-cache (but not install) macOS update/upgrades silently in the background. This significantly shortens the restart time when an installation workflow is started. If you use this option along with the --recheck-defer option then super always keeps the latest available macOS updates and allowed macOS upgrades ready for installation.",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 190
+		},
+		"InstallNow": {
+			"type": "boolean",
+			"title": "Install Now",
+			"default": true,
+			"description": "workflow option provides full support for 'self - servicing' workflows that are started by an active user. With this option enabled the macOS update/upgrade workflow starts immediately. Additionally, if the --install-now option is enabled via command-line, and the workflow is successful, this option is not be saved for future runs of super. Finally, any failures during the install now workflow do not create an automatic deferral to try again later.",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 195
+		},
+		"PolicyTriggers": {
+			"type": "string",
+			"title": "Jamf Policy Triggers",
+			"default": "trigger1,trigger2",
+			"description": "The super workflow can run one or more Jamf Pro Policy Triggers that are comma separated with no spaces.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Update-Options#run-jamf-pro-policies"
+			}],
+			"property_order": 200
+		},
+		"SkipUpdates": {
+			"type": "boolean",
+			"title": "Skip Updates",
+			"default": true,
+			"description": "Skip checking for, downloading, or installing any Apple software updates, even if they are available.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Update-Options#skip-apple-software-updates"
+			}],
+			"property_order": 205
+		},
+		"RestartWithoutUpdates": {
+			"type": "boolean",
+			"title": "Restart Without Updates",
+			"default": true,
+			"description": "replaces the --force-restart option. The super workflow performs a system restart even if there are no restart-required Apple software updates available.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Update-Options#force-system-restart"
+			}],
+			"property_order": 210
+		},
+		"FreeSpaceUpdate": {
+			"type": "string",
+			"title": "Free Space Update",
+			"default": 15,
+			"description": "allow you to override the default available free space requirements. These options should be reserved for testing purposes only as the default available free space requirements are set to reasonable minimums.",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 215
+		},
+		"FreeSpaceUpgrade": {
+			"type": "string",
+			"title": "Free Space Upgrade",
+			"default": 35,
+			"description": "allow you to override the default available free space requirements. These options should be reserved for testing purposes only as the default available free space requirements are set to reasonable minimums.",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 220
+		},
+		"FreeSpaceTimeout": {
+			"type": "string",
+			"title": "Free Space Timeout",
+			"default": 3600,
+			"description": "allows you to set a timeout for the required available free space notification (default is one hour). If the minimum available free space requirement is not met within this timeout then the workflow automatically defers.",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 220
+		},
+		"BatteryLevel": {
+			"type": "string",
+			"title": "Battery Level",
+			"default": 50,
+			"description": "allows you to override the default battery level requirement. This option should be reserved for testing purposes only as the default battery level requirement is set to a reasonable minimum.",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 225
+		},
+		"BatteryTimeout": {
+			"type": "string",
+			"title": "Battery Timeout",
+			"default": 3600,
+			"description": "allows you to set a timeout for the AC power required notification (default is one hour). If AC power is not connected within this timeout then the workflow automatically defers.",
+			"links": [{
+				"rel": "More information",
+				"href": "update"
+			}],
+			"property_order": 225
+		},
+		"TestMode": {
+			"type": "boolean",
+			"title": "Test Mode",
+			"default": true,
+			"description": "The quickest and easiest way to become familiar with super is to try different options while in test mode. In this mode super will not perform any Apple software updates, Jamf Pro Policy Triggers, or system restarts. Thus allowing you to test the other features and options of super.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Test-Mode#use-super-in-test-mode"
+			}],
+			"property_order": 230
+		},
+		"TestModeTimeout": {
+			"type": "string",
+			"title": "Test Mode Timeout",
+			"default": 60,
+			"description": "The amount of time in seconds to leave notifications open while in test mode.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Test-Mode#custom-test-mode-timeout"
+			}],
+			"property_order": 235
+		},
+		"VerboseMode": {
+			"type": "boolean",
+			"title": "Verbose Mode",
+			"default": true,
+			"description": "Generate additional debugging output to the command line and the super.log.",
+			"links": [{
+				"rel": "More information",
+				"href": "https://github.com/Macjutsu/super/wiki/Logs#use-super-in-verbose-mode"
+			}],
+			"property_order": 240
+		}
+	}
+}
