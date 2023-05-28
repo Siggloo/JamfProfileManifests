@@ -49,7 +49,7 @@
 		"RecheckDefer": {
 			"type": "string",
 			"title": "Recheck Defer",
-			"default": 120,
+			"default": 86400,
 			"description": "The number of seconds to defer if no software updates are found. Enabling this option results in super acting as a permanent agent that checks for software updates on a regular basis.",
 			"links": [{
 				"rel": "More information",
