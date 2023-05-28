@@ -136,7 +136,7 @@
 		},
 		"ZeroDay": {
 			"type": "string",
-			"title": "Hard Days",
+			"title": "Zero Days",
 			"default": "2022 - 07 - 01",
 			"description": "Instead of having the days deadline counter automatically select the day zero date, this option sets a specific date and time as day zero. Note that you need to manually update this value every time you want to set a new day zero.",
 			"links": [{
