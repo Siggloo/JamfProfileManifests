@@ -1,0 +1,30 @@
+{
+	"title": "net.tunnelblick.tunnelblick",
+	"description": "",
+	"properties": {
+        "updateCheckAutomatically": {
+            "title": "updateCheckAutomatically",
+            "description": "The default value is Yes",
+            "property_order": 5,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        },
+        "haveDealtWithAlwaysShowLoginWindow": {
+            "title": "haveDealtWithAlwaysShowLoginWindow",
+            "description": "the default value is Yes",
+            "property_order": 10,
+            "anyOf": [
+                {"type": "null", "title": "Not Configured"},
+                {
+                    "title": "Configured",
+                    "type": "boolean"
+                }
+            ]
+        }
+	}
+}
